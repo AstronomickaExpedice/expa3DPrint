@@ -27,13 +27,13 @@ difference(){
     /// trychtyr
     translate([0, 5.2, 2.5]){
         rotate([0, 0, 45]){
-            cylinder(6, 4, 9, $fn=4, center = true);
+            cylinder(6, 4.7, 9, $fn=4, center = true);
         }
     }
     
     /// zlepseni tesneni v trychtyri
   translate([0, 5.2, -2]){
-      cube([4, 5.9, 3.5],center = true);
+      cube([4, 6.5, 3.5],center = true);
     }
     
     /// vyber pro komponenty
