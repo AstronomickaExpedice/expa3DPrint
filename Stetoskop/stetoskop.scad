@@ -1,4 +1,4 @@
-$fn = 40;
+$fn = 30;
 difference(){
     cube([20, 40, 5], center = true);
     
