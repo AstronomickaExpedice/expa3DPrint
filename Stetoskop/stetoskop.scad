@@ -48,7 +48,7 @@ difference(){
         cube([5, 6.5, 3],center = true);
     }
     ///3
-    translate([5, 5, -2]){
-        cube([4, 7, 3], center = true);
+    translate([5.5, 5.5, -2]){
+        cube([5, 8, 3], center = true);
     }
 }   
