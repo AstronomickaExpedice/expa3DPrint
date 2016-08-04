@@ -25,30 +25,30 @@ difference(){
     }
      
     /// trychtyr
-    translate([0, 4.7, 2.5]){
+    translate([0, 5.2, 2.5]){
         rotate([0, 0, 45]){
             cylinder(6, 4, 9, $fn=4, center = true);
         }
     }
     
     /// zlepseni tesneni v trychtyri
-  translate([0, 4.7, -2]){
-      cube([4, 6, 3.5],center = true);
+  translate([0, 5.2, -2]){
+      cube([4, 5.9, 3.5],center = true);
     }
     
     /// vyber pro komponenty
     
     ///1
     translate([-3, -5, -2]){
-        cube([5, 13, 2.7], center = true);
+        cube([5, 13, 3], center = true);
     }
     
     ///2
     translate([-5, 5.25, -2]){
-        cube([5, 6.5, 2.7],center = true);
+        cube([5, 6.5, 3],center = true);
     }
     ///3
     translate([5, 5, -2]){
-        cube([4, 7, 2.7], center = true);
+        cube([4, 7, 3], center = true);
     }
 }   
