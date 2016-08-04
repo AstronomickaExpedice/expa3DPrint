@@ -32,7 +32,7 @@ difference(){
     }
     
     /// zlepseni tesneni v trychtyri
-  translate([0, 3.8, -2]){
+  translate([0, 4, -2]){
       cube([4, 5, 3.5],center = true);
     }
     
