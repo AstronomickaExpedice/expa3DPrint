@@ -4,16 +4,16 @@ difference(){
     
     /// rohove diry
         translate([5.08, 15.24, 0]){
-            cylinder(16, 2.9, 2.9, center = true);
+            cylinder(16, 3/2+0.2, 3/2+0.2, center = true);
         }
         translate([-5.08, 15.24, 0]){
-            cylinder(16, 2.9, 2.9, center = true);
+            cylinder(16,3/2+0.2, 3/2+0.2, center = true);
         }    
         translate([5.08, -15.24, 0]){
-            cylinder(16, 2.9, 2.9, center = true);
+            cylinder(16, 3/2+0.2, 3/2+0.2, center = true);
         }   
         translate([-5.08, -15.24, 0]){
-            cylinder(16, 2.9, 2.9, center = true);
+            cylinder(16, 3/2+0.2, 3/2+0.2, center = true);
         }
     
     ///     zapusteni pro srouby
