@@ -3,16 +3,16 @@ difference(){
     cube([20, 40, 5], center = true);
     
     /// rohove diry
-        translate([5.08, 15.5, 0]){
+        translate([5.08, 15.24, 0]){
             cylinder(16, 2.9, 2.9, center = true);
         }
-        translate([-5.08, 15.5, 0]){
+        translate([-5.08, 15.24, 0]){
             cylinder(16, 2.9, 2.9, center = true);
         }    
-        translate([5.08, -15.5, 0]){
+        translate([5.08, -15.24, 0]){
             cylinder(16, 2.9, 2.9, center = true);
         }   
-        translate([-5.08, -15.5, 0]){
+        translate([-5.08, -15.24, 0]){
             cylinder(16, 2.9, 2.9, center = true);
         }
     
@@ -32,8 +32,8 @@ difference(){
     }
     
     /// zlepseni tesneni v trychtyri
-  translate([0, 5.2, -2]){
-      cube([4, 6.5, 3.5],center = true);
+  translate([0, 5.7, -2]){
+      cube([4, 5.5, 3.5],center = true);
     }
     
     /// vyber pro komponenty
@@ -44,11 +44,11 @@ difference(){
     }
     
     ///2
-    translate([-5, 5.25, -2]){
+    translate([-5, 5.25, -2.3]){
         cube([5, 6.5, 3],center = true);
     }
     ///3
-    translate([5.5, 5.5, -2]){
+    translate([5.5, 5.5, -2.3]){
         cube([5, 8, 3], center = true);
     }
-}   
+}
