@@ -27,7 +27,7 @@ difference(){
     /// trychtyr
     translate([0, 5.2, 2.6]){
         rotate([0, 0, 45]){
-            cylinder(6, 4.7, 9, $fn=4, center = true);
+            cylinder(6, 4.7, 13.7, $fn=4, center = true);
         }
     }
     
