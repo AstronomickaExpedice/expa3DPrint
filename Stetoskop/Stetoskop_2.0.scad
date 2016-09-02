@@ -53,9 +53,19 @@ difference(){
         cube([5, 8, 3], center = true);
     }
 }
+///nohy
+difference(){
+    translate([0,5.7,4.8]){
+        cylinder(8,3.7,3.7, center = true);
+    }
+    translate([0,5.7,4.8]){
+        cylinder(8.5,3.44,3.44, center = true);
+    }
+}
+
 
 ///hlava
-translate([0,5.7,2.3])
+translate([0,5.7,7])
 {
 $fn=64;
     
