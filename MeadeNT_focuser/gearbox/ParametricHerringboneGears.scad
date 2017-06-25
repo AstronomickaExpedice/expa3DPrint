@@ -10,10 +10,10 @@ include <MCAD/involute_gears.scad>
 // WHAT TO GENERATE?
 generate = 0;    // GENERATE BOTH GEARS FOR VIEWING
 generate = 1;    // GENERATE STEPPER GEAR FOR PRINTING
-generate = 2;    // GENERATE DRIVE GEAR FOR PRINTING
+//generate = 2;    // GENERATE DRIVE GEAR FOR PRINTING
 
 // OPTIONS COMMON TO BOTH GEARS:
-distance_between_axels = 50;
+distance_between_axels = 38;
 gear_h = 15;
 gear_shaft_h = 10;
 
@@ -21,7 +21,7 @@ gear_shaft_h = 10;
 // GEAR1 (SMALLER GEAR, STEPPER GEAR) OPTIONS:
 // It's helpful to choose prime numbers for the gear teeth.
 gear1_teeth = 13;
-gear1_shaft_d = 5.25;  			// diameter of motor shaft
+gear1_shaft_d = 5.4;  			// diameter of motor shaft
 gear1_shaft_r  = gear1_shaft_d/2;	
 // gear1 shaft assumed to fill entire gear.
 // gear1 attaches by means of a captive nut and bolt (or actual setscrew)
@@ -102,6 +102,7 @@ module gearsbyteethanddistance(t1=13,t2=51, d=60, teethtwist=1, which=1)
 		// GEAR 1
 		difference()
 		{
+        $fn=100;
 		union()
 		{
 			translate([0,0,(gear_h/2) - TT])
@@ -124,19 +125,24 @@ module gearsbyteethanddistance(t1=13,t2=51, d=60, teethtwist=1, which=1)
 					rim_thickness = (gear_h/2)+AT, 
 					hub_thickness = (gear_h/2)+AT, 
 					bore_diameter=0); 
+            
+			translate([0,0,(gear_h) + AT])
+                cylinder(4, 6.5, 8);
+			translate([0,0,(gear_h) + AT+4])
+                cylinder(10-4, 8, 8);
 		}
 			//DIFFERENCE:
 			//shafthole
 			translate([0,0,-TT]) 
-				cylinder(r=gear1_shaft_r, h=gear_h+gear_shaft_h+ST);
+				cylinder(r=gear1_shaft_r, h=gear_h+gear_shaft_h+ST, $fn=50);
 
 			//setscrew shaft
 			translate([0,0,gear_h+gear_shaft_h-gear1_setscrew_offset])
 				rotate([0,90,0])
-				cylinder(r=gear1_setscrew_r, h=g1p_r);
+				cylinder(r=gear1_setscrew_r, h=g1p_r+4, $fn=50);
 
 			//setscrew captive nut
-			translate([(g1p_r)/2, 0, gear_h+gear_shaft_h-gear1_captive_nut_r-gear1_setscrew_offset]) 
+			translate([(g1p_r)/2+0.5, 0, gear_h+gear_shaft_h-gear1_captive_nut_r-gear1_setscrew_offset]) 
 				translate([0,0,(gear1_captive_nut_r+gear1_setscrew_offset)/2])
 					#cube([gear1_captive_nut_h, gear1_captive_nut_d, gear1_captive_nut_r+gear1_setscrew_offset+ST],center=true);
 			
@@ -179,7 +185,7 @@ module gearsbyteethanddistance(t1=13,t2=51, d=60, teethtwist=1, which=1)
 
 			//hex bolt shaft
 			translate([0,0,-TT]) cylinder(r=3.4/2, h=16, $fn=50);
-			translate([0,0,-TT]) cylinder(r1=70/2, r2=40/2, h=15-3, $fn=100);
+			translate([0,0,-TT]) cylinder(r1=56/2, r2=40/2, h=15-3, $fn=100);
 			translate([0,0,-TT+13.5]) cylinder(r=10.5/2, h=2, $fn=50);
 
 		}
