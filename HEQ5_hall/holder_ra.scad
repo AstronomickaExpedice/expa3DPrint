@@ -17,12 +17,12 @@ difference(){
        }
     
     // tohle je prumer konce RA osy
-    translate([36.88, -31.5, 0]) cylinder(d=3.2, h=10);
-    translate([36.88, 31.5, 0]) cylinder(d=3.2, h=10);
+    translate([40.1, -31.5, 0]) cylinder(d=3.2, h=10);
+    translate([40.1, 31.5, 0]) cylinder(d=3.2, h=10);
     
     
-    #translate([36.88, -31.5, 3]) cylinder(d=6.2, h=30);
-    #translate([36.88, 31.5, 3]) cylinder(d=6.2, h=30);
+    #translate([40.1, -31.5, 3]) cylinder(d=6.2, h=30);
+    #translate([40.1, 31.5, 3]) cylinder(d=6.2, h=30);
     
     cylinder(d=88, h = 100);
 }
