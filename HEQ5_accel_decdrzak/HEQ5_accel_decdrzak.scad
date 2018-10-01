@@ -9,7 +9,7 @@ module objimka(){
                 translate([0,5,0]) cylinder(h=20, d = montaz_d);
                 translate([-25, 0, 0]) cube([50, 100, 20]);
            }
-           translate([-21/2, 0]) cube([21, montaz_d/2+5+3, 12]);
+           translate([-28/2, 0]) cube([28, montaz_d/2+5+3, 12]);
         }
         
         cylinder(h=21, d = montaz_d);
@@ -19,15 +19,15 @@ module objimka(){
             cylinder(h=5, d = montaz_d+7);
         }
         
-        translate([15/2, montaz_d/2-2, 5]){
-            rotate([-90, 00, 0]) cylinder(h=3+2, d=6.5);
+        translate([20/2, montaz_d/2-3, 5]){
+            rotate([-90, 00, 0]) cylinder(h=3+3, d=6.5);
             rotate([-90, 00, 0]) cylinder(h=20, d=3.5);
-            rotate([-90, 90, 0]) translate([0, 0, 7]) cylinder(h=4, d=6.3, $fn=6);
+            rotate([-90, 90, 0]) translate([0, 0, 8]) cylinder(h=4, d=6.3, $fn=6);
         }
-        translate([-15/2, montaz_d/2-2, 5]){
-            rotate([-90, 00, 0]) cylinder(h=3+2, d=6.5);
+        translate([-20/2, montaz_d/2-3, 5]){
+            rotate([-90, 00, 0]) cylinder(h=3+3, d=6.5);
             rotate([-90, 00, 0]) cylinder(h=20, d=3.5);
-            rotate([-90, 90, 0]) translate([0, 0, 7]) cylinder(h=4, d=6.3, $fn=6);
+            rotate([-90, 90, 0]) translate([0, 0, 8]) cylinder(h=4, d=6.3, $fn=6);
         }
     }
     
