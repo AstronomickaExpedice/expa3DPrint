@@ -1,6 +1,6 @@
 nut_pocket = 8.4;
 nut_height = 4.5;
-nut_diameter = 9.4;
+nut_diameter = 9.7;
 
 screw_diameter = 5.5;
 
@@ -25,12 +25,14 @@ hole_diameter = 9.2;
 screw_distance = 22;
 screw_outside_distance = 10;
 
+layer_height = 0.25;
+
 support = true;
 support_thickness = 0.4;
 
 if(support) {
     translate([inside_width/-2, 0, 0])
-    cube([inside_width, support_thickness, inside_outside_hop+inside_hop]);
+    cube([inside_width, support_thickness*3, inside_outside_hop+inside_hop]);
 
     translate([inside_width/-2, 10, 0])
     cube([inside_width, support_thickness, inside_outside_hop+inside_hop]);
@@ -80,10 +82,14 @@ difference() {
         cube([inside_hop_width, inside_deepth, inside_hop]);
 
     //díry pro šrouby
-    translate([0, inside_deepth-screw_outside_distance, inside_outside_hop+inside_hop+0.25])
-        cylinder(d=screw_diameter, h=100, $fn=20);
-    translate([0, inside_deepth-screw_outside_distance-screw_distance, inside_outside_hop+inside_hop+0.25])
-        cylinder(d=screw_diameter, h=100, $fn=20);
+    translate([0, inside_deepth-screw_outside_distance, inside_outside_hop+inside_hop+layer_height])
+        cylinder(d=screw_diameter, h=3+nut_height-layer_height, $fn=20);
+    translate([0, inside_deepth-screw_outside_distance-screw_distance, inside_outside_hop+inside_hop+layer_height])
+        cylinder(d=screw_diameter, h=3+nut_height-layer_height, $fn=20);
+    translate([0, inside_deepth-screw_outside_distance, inside_outside_hop+inside_hop+3+nut_height+layer_height])
+        cylinder(d=screw_diameter, h=50, $fn=20);
+    translate([0, inside_deepth-screw_outside_distance-screw_distance, inside_outside_hop+inside_hop+3+nut_height+layer_height])
+        cylinder(d=screw_diameter, h=50, $fn=20);
 
     //díry pro matky
     translate([0, inside_deepth-screw_outside_distance, inside_outside_hop+inside_hop+3])
