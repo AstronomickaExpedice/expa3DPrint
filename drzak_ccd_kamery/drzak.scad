@@ -1,14 +1,17 @@
 outer_diameter = 50.8;
 ccd_outer_diameter = 72;
-bottom_height = 10;
+bottom_height = 13;
 wall_thickness = 2.5;
-height = 25;
-tube_hop_size = 13;
-tube_hop_deepth = 0.75;
+height = 5;
+tube_hop_size = 0;
+tube_hop_deepth = 0;
+cover_thickness = 3;
+filter_diameter = 28.4;
+layer_height = 0.25;
 
 screw_diameter = 3.8;
 screw_head_diameter = 5.8;
-screw_head_height = 1.25;
+screw_head_height = 2;
 screw_distance = 62;
 screw_count = 4;
 
@@ -17,7 +20,10 @@ difference() {
         cylinder(d=ccd_outer_diameter, h=bottom_height, $fn=200);
         cylinder(d=outer_diameter, h=bottom_height+height, $fn=200);
     }
-    cylinder(d=outer_diameter-wall_thickness*2, h=60, $fn=200);
+    cylinder(d=outer_diameter-wall_thickness*2, h=bottom_height+height-cover_thickness, $fn=200);
+
+    translate([0, 0, bottom_height+height+layer_height-cover_thickness])
+        #cylinder(d=filter_diameter, h=100, $fn=200);
 
     translate([0, 0, bottom_height+2])
         difference() {
